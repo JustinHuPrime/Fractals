@@ -17,30 +17,13 @@
 //
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-#include <iostream>
+#ifndef FRACTALS_SIERPINSKI_CARPET_H_
+#define FRACTALS_SIERPINSKI_CARPET_H_
 
-#include "sierpinskiCarpet.h"
+#include <cstddef>
 
-using namespace std;
-using namespace fractals;
-
-int main(int argc, char *argv[]) {
-  if (argc < 2) {
-    // require at least "./fractals <name of fractal>"
-    cerr << "usage: " << argv[0] << " <fractal name> [args...]" << endl;
-    return EXIT_FAILURE;
-  }
-
-  if (argv[1] == "sierpinski-carpet"s) {
-    if (argc != 3) {
-      cerr << "usage: " << argv[0] << " " << argv[1] << " <steps>" << endl;
-      return EXIT_FAILURE;
-    }
-    sierpinskiCarpet(strtoull(argv[2], nullptr, 10));
-  } else {
-    cerr << "error: " << argv[1] << " is not a valid fractal name" << endl;
-    return EXIT_FAILURE;
-  }
-
-  return EXIT_SUCCESS;
+namespace fractals {
+void sierpinskiCarpet(size_t layers) noexcept;
 }
+
+#endif  // FRACTALS_SIERPINSKI_CARPET_H_

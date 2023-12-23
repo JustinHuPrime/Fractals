@@ -1,3 +1,3 @@
-# PROJECT_NAME
+# Fractals
 
-PROJECT_BRIEF
+A collection of fractal generators
