@@ -19,6 +19,7 @@
 
 #include <iostream>
 
+#include "juliaSet.h"
 #include "sierpinskiCarpet.h"
 
 using namespace std;
@@ -37,6 +38,14 @@ int main(int argc, char *argv[]) {
       return EXIT_FAILURE;
     }
     sierpinskiCarpet(strtoull(argv[2], nullptr, 10));
+  } else if (argv[1] == "julia-set"s) {
+    if (argc != 4) {
+      cerr << "usage: " << argv[0] << " " << argv[1] << " <real> <imaginary>"
+           << endl;
+      return EXIT_FAILURE;
+    }
+    juliaSet(
+        complex<double>(strtod(argv[2], nullptr), strtod(argv[3], nullptr)));
   } else {
     cerr << "error: " << argv[1] << " is not a valid fractal name" << endl;
     return EXIT_FAILURE;

@@ -48,7 +48,13 @@ Pixel operator*(Pixel const &, float) noexcept;
 Pixel lerp(double t, Pixel const &a, Pixel const &b) noexcept;
 
 constexpr Pixel BLACK = Pixel(0, 0, 0);
-constexpr Pixel WHITE = Pixel(255, 255, 255);
+constexpr Pixel WHITE = Pixel(0xff, 0xff, 0xff);
+constexpr Pixel BLUE = Pixel(0, 0, 0xff);
+constexpr Pixel LIGHT_BLUE = Pixel(0, 0xdf, 0xff);
+constexpr Pixel YELLOW = Pixel(0xff, 0xdd, 0x27);
+constexpr Pixel ORANGE = Pixel(0xff, 0x6a, 0x00);
+constexpr Pixel RED = Pixel(0xff, 0, 0);
+constexpr Pixel MAGENTA = Pixel(0xff, 0, 0xff);
 }  // namespace fractals
 
 #endif  // FRACTALS_PIXEL_H_

@@ -56,6 +56,6 @@ void sierpinskiCarpet(size_t layers) noexcept {
     }
   }
 
-  stbi_write_png("sierpinski-carpet.png", 4096, 4096, 3, image.get(), 0);
+  stbi_write_png("sierpinski-carpet.png", SIZE, SIZE, 3, image.get(), 0);
 }
 }  // namespace fractals
