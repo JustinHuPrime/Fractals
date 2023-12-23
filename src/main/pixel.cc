@@ -19,6 +19,7 @@
 
 #include "pixel.h"
 
+#include <algorithm>
 #include <cassert>
 #include <cmath>
 
@@ -28,15 +29,15 @@ namespace fractals {
 static_assert(sizeof(Pixel) == 3);
 
 Pixel &Pixel::operator+=(Pixel const &other) noexcept {
-  r += other.r;
-  g += other.g;
-  b += other.b;
+  r = min(r + other.r, 255);
+  g = min(g + other.g, 255);
+  b = min(b + other.b, 255);
   return *this;
 }
 Pixel &Pixel::operator*=(double d) noexcept {
-  r = round(r * d);
-  g = round(g * d);
-  b = round(b * d);
+  r = min(round(r * d), 255.0);
+  g = min(round(g * d), 255.0);
+  b = min(round(b * d), 255.0);
   return *this;
 }
 Pixel operator+(Pixel const &l, Pixel const &r) noexcept {

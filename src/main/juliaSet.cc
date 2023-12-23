@@ -65,7 +65,7 @@ void juliaSet(complex<double> c) noexcept {
           // 5-6 = RED
           // 6+ = BLACK
           if (0 <= iterLog && iterLog <= 1) {
-            image[x + y * SIZE] = lerp(iterLog, BLUE, LIGHT_BLUE);
+            image[x + y * SIZE] = lerp(iterLog - 0, BLUE, LIGHT_BLUE);
           } else if (1 <= iterLog && iterLog <= 2) {
             image[x + y * SIZE] = lerp(iterLog - 1, LIGHT_BLUE, WHITE);
           } else if (2 <= iterLog && iterLog <= 3) {
